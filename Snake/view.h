@@ -30,6 +30,9 @@ public:
 			case WHITE:
 				rec.setFillColor(sf::Color::White);
 				break;
+			case RED:
+				rec.setFillColor(sf::Color::Red);
+				break;
 			}
 			win->draw(rec);
 

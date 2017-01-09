@@ -1,7 +1,7 @@
 #pragma once
 #include "pair.h"
 
-enum colors { GREEN, YELLOW, BLUE, WHITE };
+enum colors { GREEN, YELLOW, BLUE, WHITE, RED };
 
 enum dirs { UP, DOWN, LEFT, RIGHT, STAY };
 

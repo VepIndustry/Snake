@@ -3,6 +3,7 @@
 #include "wall_cell.h"
 #include "snake_cell.h"
 #include "food_cell.h"
+#include "snake_head.h"
 #include <vector>
 #include <random>
 #include <ctime>
@@ -52,5 +53,11 @@ public:
 		for (cell * x : f_cells) {
 			delete x;
 		}
+	}
+
+	void init_items() {
+		push_cell(new food_cell(0, 0));
+		int count_walls = rand() % 10;
+		for (int i = 0; i < count_walls; i++) push_cell(new wall_cell(0, 0));
 	}
 };

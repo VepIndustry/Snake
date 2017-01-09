@@ -7,8 +7,7 @@ void field::init()
 			f_cells.push_back(new empty_cell(i, j));
 		}
 	}
-	push_cell(new food_cell(0, 0));
-	push_cell(new wall_cell(0, 0));
+	
 }
 
 void field::push_cell(cell * new_cell)
@@ -27,6 +26,7 @@ int field::get_type(int i, int j)
 	for (cell * x : f_cells) {
 		if (x->getPos() == acc) return x->get_type();
 	}
+	return -1;
 }
 
 void field::replace(int i, int j, cell * new_cell)

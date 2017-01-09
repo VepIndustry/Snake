@@ -168,6 +168,7 @@
     <ClInclude Include="pair.h" />
     <ClInclude Include="snake.h" />
     <ClInclude Include="snake_cell.h" />
+    <ClInclude Include="snake_head.h" />
     <ClInclude Include="view.h" />
     <ClInclude Include="wall_cell.h" />
   </ItemGroup>

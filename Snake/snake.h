@@ -10,7 +10,7 @@ private:
 public:
 	bool move(dirs dir) {
 		field & f = field::getInstance();
-		snake_cell * end = c_snake.back();		
+		snake_cell * end = c_snake.front();		
 		
 		pair pos = pair(0,0);
 		switch (dir) {
@@ -28,7 +28,7 @@ public:
 			break;
 		}
 
-		cell * second = c_snake.front();
+		cell * second = c_snake.back();
 		pair new_coor = second->getPos() + pos;
 		
 		if (f.get_type(new_coor.getA(), new_coor.getB()) != 0 && f.get_type(new_coor.getA(), new_coor.getB()) != 4) return false;
@@ -38,13 +38,13 @@ public:
 		}
 		
 		else if (f.get_type(new_coor.getA(), new_coor.getB()) != 4) {
-			c_snake.pop_back();
 			f.replace(end->getPos().getA(), end->getPos().getB(), new empty_cell(end->getPos().getA(), end->getPos().getB()));
-			delete end;
+			c_snake.pop_front();
 		}
 		
-		f.replace(new_coor.getA(), new_coor.getB(), new snake_cell(new_coor.getA(), new_coor.getB()));
-		c_snake.push_front(new snake_cell(new_coor.getA(), new_coor.getB()));
+		f.replace(new_coor.getA(), new_coor.getB(), new snake_head(new_coor.getA(), new_coor.getB()));
+		f.replace(second->getPos().getA(), second->getPos().getB(), second);
+		c_snake.push_back(new snake_cell(new_coor.getA(), new_coor.getB()));
 		return true;
 	}
 
@@ -57,11 +57,8 @@ public:
 				f.replace(i , j, new snake_cell(i, j));
 			}
 		}
+		f.replace(to.getA(), to.getB(), new snake_head(to.getA(), to.getB()));
 	}
 
-	~snake() {
-		for (cell * x : c_snake) {
-			delete x;
-		}
-	}
+	~snake() {}
 };

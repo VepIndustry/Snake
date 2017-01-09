@@ -10,10 +10,12 @@ void game::run() {
 
 	field & fl = field::getInstance();
 	snake sn = snake();
+	fl.init_items();
 
 	sn.start(pair(1, 1), pair(1, 3));
 
 	view viewer = view();
+	dirs dir = STAY;
 
 	while (window->isOpen()) {
 		while (window->pollEvent(event)) {
@@ -22,7 +24,7 @@ void game::run() {
 				window->close();
 		}
 
-		dirs dir = STAY;
+		dir = STAY;
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) dir = LEFT;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) dir = DOWN;
@@ -31,10 +33,9 @@ void game::run() {
 
 		if (dir != STAY) {
 			if (!sn.move(dir)) return;
-			Sleep(100);
+			Sleep(200);
 		}
 		viewer.draw(fl, window);
-
 	}
 }
 
