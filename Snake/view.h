@@ -14,7 +14,7 @@ public:
 			sf::RectangleShape rec;
 			cell* pos = fl[i];
 			rec.setSize(sf::Vector2f(size_cell.getA(), size_cell.getB()));
-			rec.setPosition(sf::Vector2f(pos->getPos().getA() * size_cell.getA(), pos->getPos().getB() * size_cell.getB()));
+			rec.setPosition(sf::Vector2f((1 + pos->getPos().getA()) * size_cell.getA(), win->getSize().y - (2+pos->getPos().getB()) * size_cell.getB()));
 			
 			switch (pos->get_color())
 			{

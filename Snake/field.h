@@ -6,6 +6,7 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <iostream>
 
 class field
 {
@@ -41,6 +42,7 @@ public:
 			j = rand() % (int)size.getB();
 		} while (get_type(i, j) != 0);
 		replace(i, j, new_cell);
+		std::cout << i << "  " << j << std::endl;
 	}
 
 	void add_cell(cell * new_cell) {
