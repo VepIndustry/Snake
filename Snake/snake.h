@@ -8,32 +8,35 @@ private:
 	std::list<snake_cell *> c_snake = std::list<snake_cell *>();
 
 public:
-	bool move(int dir) {
+	bool move(dirs dir) {
 		field & f = field::getInstance();
-		snake_cell * end = c_snake.back();
-		
+		snake_cell * end = c_snake.back();		
 		
 		pair pos = pair(0,0);
 		switch (dir) {
-		case 0:
+		case Left:
 			pos += pair(-1, 0);
 			break;
-		case 1:
+		case Down:
 			pos += pair(0, -1);
 			break;
-		case 2:
+		case Right:
 			pos += pair(1, 0);
 			break;
-		case 3:
+		case Up:
 			pos += pair(0, 1);
 			break;
 		}
+
 		cell * second = c_snake.front();
 		pair new_coor = second->getPos() + pos;
+		
+		if (f.get_type(new_coor.getA(), new_coor.getB()) != 0 && f.get_type(new_coor.getA(), new_coor.getB()) != 4) return false;
+
 		if (f.get_type(new_coor.getA(), new_coor.getB()) == 4) {
 			field::getInstance().push_cell(new food_cell(0, 0));
 		}
-		if (f.get_type(new_coor.getA(), new_coor.getB()) != 0 && f.get_type(new_coor.getA(), new_coor.getB()) != 4) return false;
+		
 		else if (f.get_type(new_coor.getA(), new_coor.getB()) != 4) {
 			c_snake.pop_back();
 			f.replace(end->getPos().getA(), end->getPos().getB(), new empty_cell(end->getPos().getA(), end->getPos().getB()));

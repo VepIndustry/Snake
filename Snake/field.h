@@ -14,9 +14,20 @@ private:
 
 	const pair size = pair(10, 10);
 
-	field() {
+
+	void init() {
+		for (int i = 0; i < size.getA(); i++) {
+			for (int j = 0; j < size.getB(); j++) {
+				f_cells.push_back(new empty_cell(i, j));
+			}
+		}
+		push_cell(new food_cell(0, 0));
+		push_cell(new wall_cell(0, 0));
+	}
+
+	field() : f_cells(std::vector<cell *>()){
 		srand(time(NULL));
-		f_cells = std::vector<cell *>();
+		init();
 	}
 	field(const field&);
 	field& operator=(field&);
@@ -41,15 +52,6 @@ public:
 		return instance;
 	}
 
-	void init() {
-		for (int i = 0; i < size.getA(); i++) {
-			for (int j = 0; j < size.getB(); j++) {
-					f_cells.push_back(new empty_cell(i, j));
-			}
-		}
-		push_cell(new food_cell(0, 0));
-		push_cell(new wall_cell(0, 0));
-	}
 
 	int get_type(int i, int j) {
 		const pair acc = pair(i, j);

@@ -16,16 +16,19 @@ public:
 			rec.setSize(sf::Vector2f(size_cell.getA(), size_cell.getB()));
 			rec.setPosition(sf::Vector2f(pos->getPos().getA() * size_cell.getA(), pos->getPos().getB() * size_cell.getB()));
 			
-			switch (pos->get_type())
+			switch (pos->get_color())
 			{
-			case 0:
+			case Green:
 				rec.setFillColor(sf::Color::Green);
 				break;
-			case 1:
+			case Yellow:
 				rec.setFillColor(sf::Color::Yellow);
 				break;
-			case 2:
+			case Blue:
 				rec.setFillColor(sf::Color::Blue);
+				break;
+			case White:
+				rec.setFillColor(sf::Color::White);
 				break;
 			}
 			win->draw(rec);

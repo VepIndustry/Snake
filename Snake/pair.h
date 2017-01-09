@@ -21,8 +21,6 @@ public:
 
 	pair& operator+=(const pair& right);
 
-	pair& operator*=(const pair& right);
-
 	pair& operator-=(const pair& right);
 
 	bool operator==(const pair& right);
@@ -30,12 +28,4 @@ public:
 	const pair operator+(const pair& right);
 
 	const pair operator-(const pair& right);
-
-	void multiply(double factor);
-
-	void rotate(double angle); //крутит относительно начала координат
-
-	void rotate(double angle, pair center);
-
-	double length(pair from);
 };
