@@ -40,6 +40,7 @@ public:
 		else if (f.get_type(new_coor.getA(), new_coor.getB()) != 4) {
 			c_snake.pop_back();
 			f.replace(end->getPos().getA(), end->getPos().getB(), new empty_cell(end->getPos().getA(), end->getPos().getB()));
+			delete end;
 		}
 		
 		f.replace(new_coor.getA(), new_coor.getB(), new snake_cell(new_coor.getA(), new_coor.getB()));
@@ -55,6 +56,12 @@ public:
 				c_snake.push_back(new snake_cell(i, j));
 				f.replace(i , j, new snake_cell(i, j));
 			}
+		}
+	}
+
+	~snake() {
+		for (cell * x : c_snake) {
+			delete x;
 		}
 	}
 };
