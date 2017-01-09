@@ -151,7 +151,9 @@
   <ItemGroup>
     <ClCompile Include="cell.cpp" />
     <ClCompile Include="empty_cell.cpp" />
+    <ClCompile Include="field.cpp" />
     <ClCompile Include="food_cell.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pair.cpp" />
     <ClCompile Include="snake_cell.cpp" />

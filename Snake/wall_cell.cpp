@@ -4,7 +4,7 @@ wall_cell::wall_cell(int x, int y)
 {
 	psX = x;
 	psY = y;
-	set_color(Blue);
+	set_color(BLUE);
 }
 
 int wall_cell::get_type()

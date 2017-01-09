@@ -4,7 +4,7 @@ snake_cell::snake_cell(int x, int y)
 {
 	psX = x;
 	psY = y;
-	set_color(Yellow);
+	set_color(YELLOW);
 }
 
 int snake_cell::get_type()

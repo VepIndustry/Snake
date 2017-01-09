@@ -14,16 +14,16 @@ public:
 		
 		pair pos = pair(0,0);
 		switch (dir) {
-		case Left:
+		case LEFT:
 			pos += pair(-1, 0);
 			break;
-		case Down:
+		case DOWN:
 			pos += pair(0, -1);
 			break;
-		case Right:
+		case RIGHT:
 			pos += pair(1, 0);
 			break;
-		case Up:
+		case UP:
 			pos += pair(0, 1);
 			break;
 		}

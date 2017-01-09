@@ -18,16 +18,16 @@ public:
 			
 			switch (pos->get_color())
 			{
-			case Green:
+			case GREEN:
 				rec.setFillColor(sf::Color::Green);
 				break;
-			case Yellow:
+			case YELLOW:
 				rec.setFillColor(sf::Color::Yellow);
 				break;
-			case Blue:
+			case BLUE:
 				rec.setFillColor(sf::Color::Blue);
 				break;
-			case White:
+			case WHITE:
 				rec.setFillColor(sf::Color::White);
 				break;
 			}

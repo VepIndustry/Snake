@@ -1,9 +1,9 @@
 #pragma once
 #include "pair.h"
 
-enum colors { Green, Yellow, Blue, White };
+enum colors { GREEN, YELLOW, BLUE, WHITE };
 
-enum dirs { Up, Down, Left, Right, Stay };
+enum dirs { UP, DOWN, LEFT, RIGHT, STAY };
 
 class cell
 {
