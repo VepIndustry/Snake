@@ -3,14 +3,14 @@
 
 enum colors { GREEN, YELLOW, BLUE, WHITE, RED };
 
-enum dirs { UP, DOWN, LEFT, RIGHT, STAY };
+enum dirs { UP = 1, DOWN = -1, LEFT = 2, RIGHT = -2, STAY = 0 };
 
 class cell
 {
 protected:
-	
+
 	int psX = 0, psY = 0;
-	
+
 	void set_color(colors c);
 
 	colors color;

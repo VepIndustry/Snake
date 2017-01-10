@@ -4,7 +4,7 @@
 
 class view {
 private:
-	const pair size_cell = pair(50, 50);
+	const pair size_cell = pair(10, 10);
 public:
 	void draw(field & fl, sf::RenderWindow * win) {
 		win->clear();

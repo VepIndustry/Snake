@@ -13,7 +13,7 @@ class field
 private:
 	std::vector<cell *> f_cells;
 
-	const pair size = pair(10, 10);
+	const pair size = pair(50, 50);
 
 
 	void init();
@@ -57,7 +57,7 @@ public:
 
 	void init_items() {
 		push_cell(new food_cell(0, 0));
-		int count_walls = rand() % 10;
+		int count_walls = rand() % (int)size.getA();
 		for (int i = 0; i < count_walls; i++) push_cell(new wall_cell(0, 0));
 	}
 };

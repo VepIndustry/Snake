@@ -7,7 +7,6 @@ void field::init()
 			f_cells.push_back(new empty_cell(i, j));
 		}
 	}
-	
 }
 
 void field::push_cell(cell * new_cell)
